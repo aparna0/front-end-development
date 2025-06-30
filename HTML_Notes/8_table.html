@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!---------- <table>-----------
+    attributes - 
+    <tr> - table row
+    <th> - table header
+    <td> - table data
+-->
+<html>
+    <head>
+        <title> Table Tutorial</title>
+        <style>
+
+            /*------------------ applying border ---------------------*/
+            /* 
+                -To apply css to the specific table, use class identifyer
+            */
+            .employeeClass, .employeeClass th, .employeeClass td{
+                border: 2px solid red;
+                border-collapse: collapse;
+                border-radius: 5px;
+            }
+
+            /* ---------------- applying color to only even rows ---------------*/
+            .employeeClass tr:nth-child(even){
+                background-color:aqua;
+            }
+
+            /* ---------------- applying color to only odd column ---------------*/
+            .employeeClass td:nth-child(odd){
+                background-color:aqua;
+            }
+
+
+            
+        </style>
+    </head>
+    <body>
+        <h1>Table1 without border</h1>
+        <table name="employeeData">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>Aparna</td>
+                <td>Backend Developer</td>
+            </tr>
+            <tr>
+                <td>Jhansi</td>
+                <td>Frontend Developer</td>
+            </tr>
+        </table>
+
+        <!------------------- Table with style-----------------
+        Above table don't show boder, need to apply style for border
+        -->
+        <h1>Table2 with style</h1>
+        <table class="employeeClass">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>Aparna</td>
+                <td>Backend Developer</td>
+            </tr>
+            <tr>
+                <td>Jhansi</td>
+                <td>Frontend Developer</td>
+            </tr>
+        </table>
+
+        <!------------------- Padding & Spacing -----------------
+        Padding - space inside cell with content
+            padding-top
+            padding-bottom
+            padding-left
+            padding-right
+        border-spacing - space between cells
+        -->  
+        <h1>Table3 with padding and border-spacing</h1>
+        <table class="employeeClass" style="border-spacing:5px;">
+            <tr>
+                <th style="padding:15px;">Name</th>
+                <th style="padding:18px;">Role</th> 
+            </tr>
+            <tr>
+                <td style="padding-top:18px;">Aparna</td>
+                <td style="padding-bottom:15px;">Backend Developer</td>
+            </tr>
+            <tr>
+                <td style="padding-left:20px;">Jhansi</td>
+                <td style="padding-right:15px;">Frontend Developer</td>
+            </tr>
+        </table>
+
+        <!------------------- rowspan & colspan ---------------
+            rowspan and colspan are appied to th and td not to tr
+        -->
+        <h1>Table4 with rowspan and colspan</h1>
+        <table class="employeeClass">
+             <tr>
+                <th colspan="2">Employee Data</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Aparna</td>
+                <td>Backend Developer</td>
+            </tr>
+            <tr>
+                <td>Frontend Developer</td>
+            </tr>
+        </table>
+
+        <!------------------- colgroup, col, span and style ------------------
+            to apply style to first n coloumns
+
+            Legal CSS Properties
+            There is only a very limited selection of CSS properties that are allowed to be used in the colgroup:
+                width property
+                visibility property
+                background properties
+                border properties
+            All other CSS properties will have no effect on your tables.
+        -->
+        <h1>Table5 with colgoup and col</h1>
+        <table class="employeeClass">
+            <colgroup>
+                <col span="2", style="background-color: antiquewhite;">
+            </colgroup>
+             <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Tech Language</th>
+            </tr>
+            <tr>
+                <td>Aparna</td>
+                <td>Backend Developer</td>
+                <td>Java</td>
+            </tr>
+            <tr>
+                <td>Jhansi</td>
+                <td>Frontend Developer</td>
+                <td>JavaScript</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

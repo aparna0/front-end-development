@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exception-Handling</title>
+        <script>
+            function add(){
+                const no1 = Number(document.getElementById("no1").value);
+                const no2 = Number(document.getElementById("no2").value);
+                const result = document.getElementById("result");
+                try{
+                    if(isNaN(no1) || isNaN(no2)){
+                        throw "Entered Invali Number";
+                    }
+                    else{
+                        const add = no1 + no2;
+                        result.innerHTML = add;
+                    }
+                }catch(err){
+                    result.innerHTML = err;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Addition of given numbers</h1>
+        <label for="no1">Number1</label>
+        <input id="no1"/>
+        <br><br>
+        <label for="no2">Number2</label>
+        <input id="no2"/>
+        <br><br>
+        <button onclick="add()" id="add">Addition</button>
+        <h4 id="result"></h4>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!--
+------------------------------ DOM------------------------------
+- Document Object Model
+- It is standard model for W3C
+- It has 3 types:
+    1. Core DOM: DOM for all type of documents
+    2. XML DOM: DOM for XML documents
+    3. HTML DOM: DOM for HTML documents
+
+---------------------------- HTML DOM --------------------------
+It generates tree like structure of html elemnets 
+and it defines,
+    - All html elements as object
+    - Properties, methods and events to thml elements
+    through which we can get, add, delete and update html elements
+
+Javascript can
+    - change html elements
+    - change html style
+    - can perfrom action on html element
+    - can add, create, update, react and delete html element
+
+Javascript can perfrom above all action through DOM
+
+Example:
+-->
+
+<html>
+    <head>
+        <script>
+            function changeText(){
+                document.getElementById("h1").innerHTML = "Header1";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="h1">Header3</h1>
+        <button onclick="changeText()">click here</button>
+    </body>
+</html>
+
+<!------------------------- DOM document methods and properties ---------------------
+above example shows changing diaplay text for html element using DOM
+     document.getElementById("h1") is method of dom document object and 
+     .innerHTML is property
+-->

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+<img> - to display image on web page
+src  = source - to define image path
+style = to add style attributes of image
+alt, border, float, border-radius, box-shadow
+-->
+<html>
+    <header>
+        <style>
+            body{
+                background-image: url("resource/bgImage.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            
+            img:hover{
+                box-shadow: 7px 7px 1px lightblue; /* parameters = horizontal shadwo, verticle shadow, blur, color */
+            }
+        </style>
+    </header>
+    <body>
+        <h2>Let's understand <cite>img</cite> tag</h2>
+        <img 
+        src="resource/bgImage.jpeg" 
+        alt="sample image"
+        style=
+        "border: 2px solid red; 
+        border-radius:50px;
+        float:right"
+        width="30%" height="200px">
+        
+        <!----------------------- <map>, area --------------------------
+            <map>, name - create specific clickable area of image 
+            <area>, shape, coords, href - inside map tag we have nested one or more <area> tag which 
+            attributes - name, mapname
+            usemap=#mapname
+        -->
+            
+        <!--    --------------Shape
+        You must define the shape of the clickable area, and you can choose one of these values:
+
+        rect - defines a rectangular region
+        circle - defines a circular region
+        poly - defines a polygonal region
+        default - defines the entire region
+        -->
+
+        <img src="resource/bgImage.jpeg" alt="Workplace" usemap="#workmap">
+
+        <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.w3schools.com/html">
+        <area shape="circle" coords="337,300,44" alt="Coffee" href="https://www.w3schools.com/html">
+        </map>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!--
+    1. onLoad
+-->
+<!DOCTYPE html>
+<html>
+    <!----------------------- onload()---------------------->
+    <body onload="document.getElementById('url').innerHTML = 'Page loaded successfully';">
+        <p id="url">url</p>
+
+        <!----------------------- onmouserover(), onmousein(), onmouseout() ---------------------->
+        <h1 id="h1" onmouseover="this.style.color='red';" onmouseout="this.style.olor='blue';">Addition</h1>
+
+        <!------------------------ oninput()-------------------------->
+        <p id="errorMsg"></p>
+        <label for="no1">Number1: </label>
+        <input id="no1" oninput="checkError(this);">
+        <p style="display: inline-block";></p><br>
+
+        <label for="no2">Number2: </label>
+        <input id="no2" oninput="checkError(this);">
+        <p style="display: inline-block";></p><br>
+    
+        <!------------------------ onclick()-------------------------->
+        <button onclick="add();">Addition</button>
+        <p id="result">Addition is </p>
+    
+        <script>
+            function checkError(inputEle){
+                const nextEle = inputEle.nextElementSibling;
+                nextEle.style.color="red";
+                if(isNaN(inputEle.value)){
+                    nextEle.innerHTML = "please enter correct number";
+                }
+                else{
+                    nextEle.innerHTML = "";
+                }
+            }
+            function add(){
+                const result = parseFloat(document.getElementById("no1").value) + parseFloat(document.getElementById("no2").value);
+                document.getElementById("result").innerText = "Addition is "+result;
+            }
+        </script>
+    </body>
+</html>

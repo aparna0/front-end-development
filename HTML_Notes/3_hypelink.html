@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <style>
+            /*
+            ------------Link color and CSS -----------
+            Link - underlined + blue
+            active - underlined + red
+            visited - underlined + purple
+            
+            --------------CSS: -------------
+            a:link
+            a:active
+            a:visited
+            a:hover
+            */
+            a:link{
+                color: blueviolet;
+            }
+            a:active{
+                color:brown;
+            }
+            a:hover{
+                color: red;
+            }
+            a:visited{
+                color: black;
+            }
+
+            img:hover{
+                border: 3px solid blue;
+            }
+        </style>
+    </header>
+    <body>
+        <!-- 
+        anchor tag is used for hyperlink
+        href tag is used to specify URL
+        -->
+
+        <!--
+        -----------<a>, href, id, target-----------
+        The target attribute specifies where to open the linked document.
+        The target attribute can have one of the following values:
+            _self - Default. Opens the document in the same window/tab as it was clicked
+            _blank - Opens the document in a new window or tab
+            _parent - Opens the document in the parent frame
+            _top - Opens the document in the full body of the window
+        -->
+
+        <!-- Text as a link -->
+        <a href="https://www.w3schools.com/html/html_links.asp" id="textLink" target="_blank">click here</a>
+        <br>
+
+        <!-- Image as a link -->
+        <a href="https://www.w3schools.com/html/html_links.asp" id="imgLink" target="_top">
+            <img src="resource/bgImage.jpeg" style="width:20%; height:10%;">
+        </a>
+        <br>
+
+        <!-- button as a link -->
+        <a href="https://www.w3schools.com/html/html_links.asp" id="buttonLink" target="_parent">
+            <button>
+                ok
+            </button>
+        </a>
+        <br>
+
+        <!--
+        ----------- Bookmark ----------------
+        To jump into specific content
+        href = "#id" - on same page
+        href = "filename#id" - on diff page
+        -->
+
+        <a href="#bookmarkId">
+            <h3>bookmark on same page</h3>
+        </a>
+        <a href="Basic1.html#aparna">
+            <h3>bookmark on different page</h3>
+        </a>
+
+        <h3>bookmark on same page</h3>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h3 id="bookmarkId"> bookmark on same page is workings </h3>
+    </body>
+</html>

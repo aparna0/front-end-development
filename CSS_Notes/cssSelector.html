@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Selector</title>
+        <style>
+            /*-----------------------Element Selector-----------------------*/
+            h1{
+                background-color: aqua;
+            }
+
+            /*-----------------------id Selector-----------------------*/
+            #header1{
+                background-color: rgb(51, 0, 255);
+            }
+
+            /*-----------------------class Selector-----------------------*/
+            .demo{
+                background-color: rgb(255, 0, 221);
+            }
+            
+            /*-----------------------class Selector for specific-----------------------*/
+            h2.demo{
+                background-color: rgb(81, 97, 97);
+            }
+            
+            /*-----------------------group Selector-----------------------*/
+            h2,p{
+                background-color: rgb(255, 8, 0);
+            }
+
+            /*-----------------------psuedo class Selector---------------------
+                selector:pseudo-class {
+                    property: value;
+                }
+                selector:first-child{}
+                selector:nth-child(no)
+            */
+            button:hover{
+                color: blueviolet;
+            }
+
+             /*-----------------------psuedo element Selector---------------------
+             A CSS pseudo-element is used to style specific parts of an element.
+                selector:pseudo-element {
+                    property: value;
+                }
+                selector::first-line{}
+                selector::first-letter{}
+                selector::after{}
+                selector::before{}
+            */
+            h3::before{
+                content: url("/HTML_Notes/resource/bgImage.jpeg");
+            }
+
+            /*--------------------------------------------------css attribute Selector------------------------------------------------
+            Selector	        Example	                Example description
+            [attribute]	        [target]	            Selects all elements with a target attribute
+            [attribute=value]	[target="_blank"]	    Selects all elements with target="_blank"
+            [attribute~=value]	[title~="flower"]	    Selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
+            [attribute|=value]	[lang|="en"]	        Selects all elements with a lang attribute value starting with "en"
+            [attribute^=value]	a[href^="https"]	    Selects all <a> elements with a href attribute value starting with "https"
+            [attribute$=value]	a[href$=".pdf"]	        Selects all <a> elements with a href attribute value ending with ".pdf"
+            [attribute*=value]	a[href*="w3schools"]	Selects all <a> elements with a href attribute value containing the substring "w3schools"
+            */
+
+            /*---------------------------------------------- Combined Selector ----------------------------------------------*/
+            /*------------------------------------------------- Descendent Selector---------------------------------------------
+            p q{} - it will apply css to only thoes q element whose descendent element is p 
+            */
+            div h1{ /*in this page we have so many h1 element but is will apply css to only h1 descedent is dev element.*/
+                color: brown;
+            }
+            /* here  h1 inside section tag also get affected because div is descendent of h1 inside section tag,
+            we can use child selector to apply css to only h1 tag present in dev tag*/
+
+            /*-------------------------------------------------child Selector-------------------------------------------------
+            p > q{} - it will apply css to only thoes q element whose immediate parent element is p
+            */
+            div > h1{ /*in this page we have so many h1 element but is will apply css to only h1 descedent is dev element.*/
+                color: rgb(10, 1, 1);
+            }
+
+            /*-------------------------------------------------Adjacent sibling Selector---------------------------------------
+            p + q{} - it will apply css to immediate p whose preceding sibling is p
+            */
+            h1 + h2{
+                border: 5px solid black;
+            }
+
+            /*-------------------------------------------------general sibling Selector---------------------------------------
+            p + q{} - it will apply css to all p whose preceding sibling is p
+            */
+            h1 ~ h2{
+                border: 5px solid rgb(12, 5, 199);
+            }
+
+        </style>    
+    </head>
+    <body>
+        <h1>Element selector</h1>
+        <h1 id="header1">Id selector</h1>
+        <h1 class="demo">Class selector</h1>
+        <h2 class="demo">Class selector</h1>
+        <p>this is group selector</p>
+        <h2>this is group selector</h2>
+        <button>mouse over me</button>
+        <h3>pseudo-element</h3>
+        <div>
+            <h1>descendent selector</h1>
+            <section>
+                <h1>descendent selector</h1>
+            </section>
+        </div>
+
+        <h1>demo1</h1>
+        <h2>demo2</h2>
+        <h2>demo3</h2>
+    </body>
+</html>

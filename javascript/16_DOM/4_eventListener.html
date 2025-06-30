@@ -1,0 +1,52 @@
+<!-------------------------------------- eventListerner ------------------------------------------
+
+- We can add Event Listener to the html element or any DOM objet 
+- sysntax: element.addEventListener(event, function, useCapture)
+- Example: element.add("click", myFunction, true);
+    - first parameter specifies event type like click for onClick , don't add "on" prefix for event
+    - second parameter specifies handleFunction
+    - third parameter specifies way of event propogation
+        - there 2 type : bubbling and capturing
+        - default is false, i.e bubbling
+
+--------------------------- Event Bubbling and Event capturing -----------------------------
+
+- Event propogation specifies way of handling event when ther is nested eventListener is specifies
+- suppose there is <p> element inside <div> element and user clicked on div element, then
+- In Bubbling: first innermost element's event is handled and then outer one
+- In capturing: first outermost element's event is handled then inner one
+
+We can add multiple same type of event listener to element and it doesn't override but it executed sequencially 
+    
+-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="outer">
+            <p id="inner">click here</p>
+        </div>
+
+        <div id="outer2">
+            <p id="inner2">click here2</p>
+        </div>
+
+        <script>
+            const outerEle = document.getElementById("outer");
+            const innerEle = document.getElementById("inner");
+
+            //----------------------- bubbling-------------------------
+            outerEle.addEventListener("click", function(){ alert("outer handler")});
+            innerEle.addEventListener("click", function(){ alert("inner handler1")});
+            innerEle.addEventListener("click", function(){ alert("inner handler2")});
+
+            const outerEle2 = document.getElementById("outer2");
+            const innerEle2 = document.getElementById("inner2");
+
+            //---------------------- capturing ----------------------
+            outerEle2.addEventListener("click", function(){ alert("outer handler")}, true);
+            innerEle2.addEventListener("click", function(){ alert("inner handler1")});
+
+        </script>
+    </body>
+</html>

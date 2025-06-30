@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--------------------------------<head>--------------------------------
+        - container of other tags-<title>, <script>, <style>, <link>, <base> and <meta>
+        - containce impormation about page but it is not dispalyed on page
+        - Metadata typically define the document title, character set, styles, scripts, and other meta information.
+        -->
+
+        <!--------------------------------<title>--------------------------------
+        - Title to the web page and it is shown in the browser's title bar or in the page's tab.
+        - Page title is important fo Search Engine Optimization(SEO), search engine algorithms uses page title to decide order fo search result.
+        -->
+        <title>head tag tutorial</title>
+
+        <!--------------------------------<style>--------------------------------
+            - The <style> element is used to define style information for a single HTML page:
+        -->
+        <style>
+            h1{
+                background-color: red;
+            }
+        </style>
+
+        <!--------------------------------<link>--------------------------------
+            - The <link> element is used to define relanship between current page to external resporses
+            - It mostly used to link external CSS to current page
+        -->
+        <link rel="stylesheet" href="/CSS_Notes/design.css">
+
+        <!--------------------------------<script>--------------------------------
+            - The <script> element is used to define client side javascript
+        -->
+        <script>
+            function fun(){
+                document.getElementById("id1").innerHTML="Hello Aparna!!!";
+            }
+        </script>
+
+        <!--------------------------------<base>--------------------------------
+            - The <base> element is used to define default base URL and target for all links
+            - it must have either href or tagert or both tag
+        -->
+        <base href="https://www.w3schools.com/" target="_black">
+
+        <!--------------------------------<meta>--------------------------------
+            - The <meta> element is used to define page character set, description, author, ketwords and viewpoint
+            - name and content attribute is used to define these meda data
+        -->
+        <meta charset="UTF-8">
+        <meta name="description" content="it is head tutorial demo page">
+        <meta name="keywords" content="html, head, title, style, link, script, base, meta, description, keywords, author, viewpoint">
+        <meta name="author" content="Aparna Mangalaram">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+
+        <body>
+            <h1 id="id1">hello</h1>
+            <button type="button" onclick="fun();"> click me</button>
+
+            <a href="tags/tag_base.asp">base tag demo</a>
+        </body>
+
+    </head>
+</html>

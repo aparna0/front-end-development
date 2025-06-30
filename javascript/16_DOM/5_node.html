@@ -1,0 +1,46 @@
+<!---------------------------Node -----------------------------
+- In DOM each node is represented as node
+- document is represented as document node
+- html element as element node
+- text content as text node
+- html attribute as attribute node
+- comments as comment node
+
+----------------------------- Node relationship----------------
+- top node is root
+- node can have,
+    - one parent node
+    - one or more child node
+    - one or more siblings
+
+---------------------------- Navigation between node ------------
+- parentNode
+- childNodes
+- firsthild
+- lastChild
+- nextSibling
+- previousSibling
+-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="nodeDemo();">click here</button>
+        <div id="div1">
+            <div id="div2">
+                <p>ok</p>
+
+            </div>
+        </div>
+
+        <script>
+            //-------------------- creating new node--------------------
+            function nodeDemo(){
+                
+                const childEle = document.createElement("p2");
+                const textNode = document.createTextNode("this is created child element");
+                childEle.appendChild(textNode);
+                document.getElementById("div2").appendChild(childEle);
+            }
+        </script>
+    </body>
+</html>

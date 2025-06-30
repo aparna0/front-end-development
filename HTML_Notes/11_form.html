@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form tutorial</title>
+    </head>
+    <body>
+
+        <!--------------------- <form>-------------------
+        - it is used to take input from user
+        attributes: action, target, method="get/port"
+        -->
+        <form action="Basic1.html" target="_blank" method="get"><!--If you lick on submit then it will navigates to Basic1 page on new tag with get method-->
+            <!--------------------- <lable>-------------------
+            - it is used to define label fo other input element
+            - attribute: 
+                id, value, readonly, multiple, disabled, required, size
+                'for' - should be equal to id of element for which label is used
+                placeholder,
+            -->
+            <label for="text">text label</label>
+
+            <!------------------------------------- <input>-----------------------------------
+            - it is used to take input from user
+            <input type="button">
+            <input type="checkbox">
+            <input type="color">
+            <input type="date">
+            <input type="datetime-local">
+            <input type="email">
+            <input type="file">
+            <input type="hidden">
+            <input type="image">
+            <input type="month">
+            <input type="number">
+            <input type="password">
+            <input type="radio">
+            <input type="range">
+            <input type="reset">
+            <input type="search">
+            <input type="submit">
+            <input type="tel">
+            <input type="text">
+            <input type="time">
+            <input type="url">
+            <input type="week">
+            -->
+
+        
+            <!-----------------------------------------text----------------------------------->
+            <input type="text" id="text"><br><hr>
+
+            <!----------------------------------------radio button---------------------------->
+            <!-- name attribute to grp radio into single entity and allowing single selection-->
+            <input type="radio" id="radio1" name="color">
+            <label for="radio1">white</label><br>
+            <input type="radio" id="radio2" name="color">
+            <label for="radio2">black</label><br><hr>
+            
+            <!-----------------------------------------checkbox----------------------------------->
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">white</label><br>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">black</label><br><hr>
+
+            <!-----------------------------------------button------------------------------------------->
+            <input type="button" value="Button demo"><br>
+
+            <!-----------------------------------------submit------------------------------------------->
+            <input type="submit" value="submit"><br><hr>
+
+            <!-----------------------------------------<button>------------------------------------------->
+            <button onclick="alert('Hello World!')">button tag</button><br><hr>
+
+            <!-----------------------------------------dropdown list-----------------------------------------
+            <select> - to define container for dropdown list
+                attributes:
+                    id,
+                    name,
+                    size - maximium number of elements visible in dropdown,
+                    multiple - to allow mutliple values to select
+            <option> - to define elements in the dropdown
+                attributes: value
+            -->
+            <label for="section1">select favourite colors</label><br>
+            <select id="section1" name="colorsInDropdown" size="3" multiple>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="blue">blue</option>
+                <option value="red">red</option>
+                <option value="violet">violet</option>
+                <option value="green">green</option>
+            </select><br><hr>
+
+            <!-----------------------------------------<textarea>-----------------------------------------
+            multiline text input
+            rows, cols and "style" are used to defoine size of textarea
+            -->
+            <label for="textarea1">Enter about yourself</label>
+            <textarea id="textarea1" rows="5" cols="10"></textarea><br>
+
+            <label for="textarea2">Enter your hobbies</label>
+            <textarea id="textarea2" style="width: 40%, height=30%;"></textarea><br><hr>
+
+            <!-----------------------------------------<fielset>-----------------------------------------
+            <fieldset> - to grp related data in the form
+            <legend> - caption for fieldset    
+            -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname"><br>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname"><br>
+            </fieldset><hr>
+
+            <!-----------------------------------------<datalist>-----------------------------------------
+            <datalist> - to define pre define values for input
+            list name should be equal to id of datalist    
+            -->
+            <datalist id="datalist1">
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+                <option value="white">white</option>
+            </datalist>
+            <input list="datalist1"><br><hr>
+
+            <!-----------------------------------------<output>-----------------------------------------
+            <output> - to display output of calculation
+            -->
+            <label for="no1">no1:</label>
+            <input type="text" id="no1" name="no1" value="50">
+            <label for="no2">no2:</label>
+            <input type="text" id="no2" name="no2">
+            <output id="add" name="res"></output>
+            <button onclick="res.value= parseInt(no1.value)+parseInt(no2.value)">Addition</button>
+            
+        </form>
+        
+    </body>
+</html>
