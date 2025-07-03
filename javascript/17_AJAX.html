@@ -1,0 +1,49 @@
+<!-------------------------------------------AJAX-----------------------------------   
+AJAX - Asychronous Javascript And XML
+
+- it is not programming language
+
+- AJAX just uses a combination of:
+    A browser built-in XMLHttpRequest object (to request data from a web server)
+    JavaScript and HTML DOM (to display or use the data)
+
+- Using XMLHttpRequest object It allows asychronously,
+    - receive the data from web server
+    - update content of web page withput reloading page
+    - send data to server in backend
+
+- How it works:
+    1. even occure in web page
+    2. javscript creates XMLHttprequest object
+    3. XMLHttprequest object sends request to the web server
+    4. web server process the request and send response to javscriopt through XMLHttpRequest object
+    5. response is read by javscript and respective action is performed.
+
+- steps:
+    1. create XMLHttpRequest object
+    2. define callback function
+    3. open request
+    4. send request
+    5. read response 
+-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //---------------- create XMLHttpRequest object -----------------
+            const xhr = new XMLHttpRequest();
+
+            //---------------- define callback function -----------------
+            xhr.onload = function(){
+                alert(xhr.status);
+            }
+
+            //---------------- open and send request -----------------
+            //syntax - open(method_type, url, async, username, password)
+                // if 3rd parameter value is true then request is processed in asynchronous manner else synchronous
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+            xhr.send();
+
+        </script>
+    </body>
+</html>

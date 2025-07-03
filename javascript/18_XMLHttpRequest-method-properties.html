@@ -1,0 +1,51 @@
+<!--
+------------------------------------- XMLHttpRequest Object methods ------------------------------
+- new XMLHttpRequest()
+- open()
+- send()
+- send(string) - used for post request
+- setRequestHeader() - return header information
+- getResponseHeader() - return specific header information
+- getAllResponseHeaders()
+- abort()
+
+----------------------------------- XMLHttpRequest Object properties ------------------------------
+- status
+- statusText
+- responseText
+- responseXML
+- readyState
+- onreadystatechange
+- onload
+-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <label id="l1">List of Users</label>
+        <ol id="userList">
+        </ol>
+
+        <script>
+           const xhr = new XMLHttpRequest();
+
+           xhr.onload = function(){
+            const paraEle = document.getElementById("userList");
+            if(xhr.status === 200){
+                userData = JSON.parse(xhr.responseText);
+                userData.forEach((user)=>{
+                    userName = user.name;
+                    childEle = document.createElement("li");
+                    childText = document.createTextNode(userName);
+                    childEle.appendChild(childText);
+                    paraEle.appendChild(childEle);
+                });
+            }
+           }
+           
+           xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+           xhr.send();
+           
+        </script>
+    </body>
+</html>
